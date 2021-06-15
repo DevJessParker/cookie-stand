@@ -77,7 +77,7 @@ function renderCookieChart(store) {
   
   for (let i = 0; i < storeHours.length; i++) {
     const liElem = document.createElement('li');
-    liElem.textContent = storeHours[i] + ' ' + store.hourSales[i];
+    liElem.textContent = storeHours[i] + '  ' + store.hourSales[i];
     ulElem.appendChild(liElem);
   }
 }
