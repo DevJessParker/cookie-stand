@@ -2,90 +2,80 @@
 
 const storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 
-const seattle = {
-  location: 'Seattle',
-  minCust: 23,
-  maxCust: 65,
-  hourSales: [],
-  avgCookie: 6.3,
+
+function Store(location, avgCookie, minCust, maxCust) {
+  this.location = location;
+  this.avgCookie = avgCookie;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.cookieNumber = [];
+  this.storeArray.push(this);
+  console.log('this', this);
 }
 
-const tokyo = {
-  location: 'Tokyo',
-  minCust: 3,
-  maxCust: 24,
-  hourSales: [],
-  avgCookie: 1.2,
-}
+Store.prototype.storeArray = [];
 
-const dubai = {
-  location: 'Dubai',
-  minCust: 11,
-  maxCust: 38,
-  hourSales: [],
-  avgCookie: 3.7,
-}
-
-const paris = {
-  location: 'Paris',
-  minCust: 20,
-  maxCust: 38,
-  hourSales: [],
-  avgCookie: 2.3,
-}
-
-const lima = {
-  location: 'Lima',
-  minCust: 2,
-  maxCust: 16,
-  hourSales: [],
-  avgCookie: 4.6,
-}
-
-function randomCustomer(minCust, maxCust) {
-  return Math.floor(Math.random() * (maxCust - minCust) + minCust);
-}
-
-function cookieNumber(avgCookie, customerCount) { 
-  return Math.floor(avgCookie * customerCount);
-}
-
-function getHourSales(object) {
+Store.prototype.getCookieSales = function() {
   for (let i = 0; i < storeHours.length; i++) {
-    let hourCust = randomCustomer(object.minCust, object.maxCust);
-    let avgCookieHour = cookieNumber(object.avgCookie, hourCust);
-    object.hourSales.push(avgCookieHour);
+  const randomCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust)
+  const cookieSales = (randomCust * Math.floor(this.avgCookie));
+  this.cookieNumber.push(cookieSales);
   }
 }
 
-console.log(seattle);
+const cookieChartElemDiv = document.getElementById('cookiechart');
 
-let storeArray = [seattle, tokyo, dubai, paris, lima]
 
-const cookieChartDivElem = document.getElementById('cookiechart')
+document.getElementById('cookiechart') 
+const tableElem = document.createElement('table');
+cookieChartElemDiv.appendChild(tableElem);
 
-function renderCookieChart(store) {
-  const articleElem = document.createElement('article');
-  cookieChartDivElem.appendChild(articleElem);
-  
-  const h2Elem = document.createElement('h2');
-  h2Elem.textContent = store.location;
-  articleElem.appendChild(h2Elem);
-  
-  const ulElem = document.createElement('ul');
-  articleElem.appendChild(ulElem);
+function renderHours() {
+  const tableHeader = document.createElement('thead');
+  tableElem.appendChild(tableHeader);
+  const row1 = document.createElement('tr')
+  tableHeader.appendChild(row1);
+  const storeCell = document.createElement('th');
+  storeCell.textContent = ('Location');
+  row1.appendChild(storeCell);
   
   for (let i = 0; i < storeHours.length; i++) {
-    const liElem = document.createElement('li');
-    liElem.textContent = storeHours[i] + '  ' + store.hourSales[i];
-    ulElem.appendChild(liElem);
+   const headerCell = document.createElement('th');
+   headerCell.textContent = storeHours[i];
+   row1.appendChild(headerCell);
   }
 }
 
-for (let i = 0; i < storeArray.length; i++) {
-  let currentStore = storeArray[i];
-  getHourSales(currentStore);
-  renderCookieChart(currentStore);
+Store.prototype.renderData = function() {
+  const storeRow = document.createElement('tr');
+  tableElem.appendChild(storeRow);
+  const storeColumn = document.createElement('td');
+  storeColumn.textContent = this.location;
+  storeRow.appendChild(storeColumn);
+  
+
+  for (let i = 0; i < storeHours.length; i++) {
+      const dataCell = document.createElement('td');
+      dataCell.textContent = this.cookieNumber[i];
+      storeRow.appendChild(dataCell);
+  }
 }
+
+function renderAllStores() {
+for (let i = 0; i < Store.prototype.storeArray.length; i++) {
+  let currentStore = Store.prototype.storeArray[i];
+  currentStore.getCookieSales();
+  currentStore.renderData();
+  }
+}
+
+const seattle = new Store('Seattle', 6.3, 23, 65);
+const toyko = new Store('Tokyo', 1.2, 3, 24);
+const dubai = new Store('Dubai', 3.7, 11, 38);
+const paris = new Store('Paris', 2.3, 20, 38);
+const lima = new Store('Lima', 4.6, 2, 16);
+
+renderHours();
+renderAllStores();
 
 
