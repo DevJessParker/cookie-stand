@@ -1,0 +1,149 @@
+body {
+  box-sizing: border-box;
+  background-color: rgb(24, 24, 24);
+}
+
+h1 {
+  color: #f6f6f6;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 3px;
+  font-size: 3em;
+  margin: 0px;
+}
+
+h2 {
+  color: #d37322;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 4.8px;
+  font-size: 1.5em;
+  margin: 0px;
+}
+
+p {
+  font-family: 'Source Serif Pro', serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(24, 24, 24);
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 20px;
+  position: sticky;
+}
+
+#cookies {
+  color: #d84628;
+}
+
+header div {
+  text-align: left;
+  padding-left: 20px;
+}
+
+header img {
+  width: 400px;
+  transform: rotate(10deg);
+}
+
+header img:on hover {
+  width: 350px;
+  transform: rotate(10deg);
+  position: relative;
+  right: 5%;
+}
+
+nav {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+nav ul {
+  color: white;
+  display: flex;
+  list-style: none;
+  background-color: #d37322;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1em;
+  padding: 0px;
+  text-align: center;
+  margin: 0px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  width: 180px;
+  font-weight: 550;
+  padding: 10px 0px;
+}
+
+nav a:hover {
+  color: rgb(24, 24, 24);
+  text-decoration: none;
+  background-color: white;
+  width: 180px;
+  font-weight: 550;
+}
+
+
+#fishtagram {
+  display: flex;
+  justify-content: center;
+}
+
+#fishtagram div {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #d84628;
+  width: 180px;
+  height: 170px;
+  justify-content: center;
+}
+
+#fishtagram p {
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.social {
+  width: 180px;
+  height: 170px;
+  object-fit: cover;
+}
+
+.about {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 15px;
+  color: white;
+}
+
+.about p {
+  color: white;
+  width: 25%;
+  line-height: 1.2em;
+  letter-spacing: 1.1px;
+}
+
+
+footer {
+  display: flex;
+  text-align: left;
+  background-color: #d37322;
+  padding-bottom: 10px;
+  position: sticky;
+}
+
+footer p {
+  margin-left: 4em;
+  margin-bottom: 2em;
+}
