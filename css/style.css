@@ -23,6 +23,13 @@ p {
   font-family: 'Source Serif Pro', serif;
 }
 
+form {
+  color: white;
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.1em;
+}
+
+
 header {
   display: flex;
   justify-content: space-around;
@@ -147,3 +154,104 @@ footer p {
   margin-left: 4em;
   margin-bottom: 2em;
 }
+
+/* Begin New Page */
+
+#franchise {
+  margin-top: 75px;
+}
+
+section {
+  margin-top: 75px;
+}
+
+#salesform {
+  padding: 20px;
+  background-color: #d37322;
+  width: 20%;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+#salesform fieldset {
+  display: flex;
+  flex-direction: column;
+  background-color: #d37322;
+  border: none;
+}
+
+section h2 {
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#salesform label {
+  display: block;
+  border: none;
+  color: white;
+  font-weight: 400;
+}
+
+#salesform input {
+  display: block;
+  border: none;
+  color: white;
+  background-color: black;
+  height: 40px;
+  margin-top: 3px;
+  margin-bottom: 15px;
+  padding: 0px 15px;
+}
+
+#salesform button {
+  display: block;
+  background-color: white;
+  color: black;
+  width: 50%;
+  align-self: center;
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.1em;
+  border: none;
+  width: 50%;
+  padding: 7px 15px;
+  margin-top: 10px;
+}
+
+#sectionforsales {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#cookiechart {
+  display: flex;
+  color: white;
+  background-color: #d37322;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 1px;;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  margin-left: 40px;
+}
+
+#cookiechart th { 
+  text-align: center;
+  padding: 5px 5px;
+}
+
+#cookiechart td { 
+  text-align: center;
+}
+
+#cookiechart tr:nth-child(even) {
+  color: black;
+  background-color: white;
+}
+
+tfoot, thead {
+  font-size: 1.2em;
+}
+
+
