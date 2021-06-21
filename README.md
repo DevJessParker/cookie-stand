@@ -3,11 +3,9 @@ Storefront for Pete's Salmon Cookies
 
 
 LAB - 06
-Project Name
+Salmon Cookies
 
-I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
-
-Author: Jessica Parker/Group Name
+Author: Jessica Parker
 Images Sourced From: Upsplash.com
 Inner HTML Info Source: https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 
