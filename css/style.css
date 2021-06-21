@@ -5,7 +5,7 @@ body {
 
 h1 {
   color: #f6f6f6;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Righteous', cursive;
   letter-spacing: 3px;
   font-size: 3em;
   margin: 0px;
@@ -36,7 +36,7 @@ header {
   align-items: center;
   background-color: rgb(24, 24, 24);
   padding-left: 15%;
-  padding-right: 15%;
+  padding-right: 10%;
   padding-bottom: 20px;
   position: sticky;
 }
@@ -55,11 +55,9 @@ header img {
   transform: rotate(10deg);
 }
 
-header img:on hover {
-  width: 350px;
-  transform: rotate(10deg);
-  position: relative;
-  right: 5%;
+header img:hover {
+  transform: rotate(-10deg);
+  transition: ease-in-out 1s;
 }
 
 nav {
@@ -95,6 +93,12 @@ nav a:hover {
   background-color: white;
   width: 180px;
   font-weight: 550;
+  transform: scale(1.25);
+  border-radius: 15px;;
+}
+
+#countdown {
+  color: white;
 }
 
 
@@ -102,6 +106,16 @@ nav a:hover {
   display: flex;
   justify-content: center;
 }
+
+#fishtagram div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #d84628;
+  border-radius: 50%;
+  border: 6px white solid;
+}
+
 
 #fishtagram div {
   display: flex;
@@ -112,6 +126,7 @@ nav a:hover {
   height: 170px;
   justify-content: center;
 }
+
 
 #fishtagram p {
   font-family: 'Cabin', sans-serif;
@@ -128,17 +143,57 @@ nav a:hover {
 
 .about {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
-  margin: 15px;
+  margin-top: 45px;
   color: white;
+  width: 100%;
 }
 
-.about p {
+.about img {
+  display: block;
+  width: 500px;
+  height: 250px;
+}
+
+.about div {
+  display: flex;
   color: white;
-  width: 25%;
+  width: 40%;
   line-height: 1.2em;
   letter-spacing: 1.1px;
+  align-content: center;
+  justify-content: center;
+  padding: 2em;
+  text-align: center;
+}
+
+
+
+.locations {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  margin-bottom: 100px;
+}
+
+.locations article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.locations article img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  border: 6px white solid;
 }
 
 
@@ -146,13 +201,16 @@ footer {
   display: flex;
   text-align: left;
   background-color: #d37322;
-  padding-bottom: 10px;
   position: sticky;
+  margin: 0px;
+  justify-content: space-between;
 }
 
 footer p {
-  margin-left: 4em;
-  margin-bottom: 2em;
+  margin: 1.5em 2em;
+  font-size: .9em;
+  color: white;
+  font-weight: 1.5em;
 }
 
 /* Begin New Page */
@@ -167,7 +225,7 @@ section {
 
 #salesform {
   padding: 20px;
-  background-color: #d37322;
+  background-color: #d84628;
   width: 20%;
   justify-content: center;
   border-radius: 10px;
@@ -223,6 +281,7 @@ section h2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 100px;
 }
 
 #cookiechart {
@@ -245,7 +304,7 @@ section h2 {
   text-align: center;
 }
 
-#cookiechart tr:nth-child(even) {
+#cookiechart tr:nth-child(odd) {
   color: black;
   background-color: white;
 }
