@@ -17,11 +17,10 @@ function Store(location, avgCookie, minCust, maxCust) {
 Store.prototype.storeArray = [];
 
 Store.prototype.getCookieSales = function() {
-  console.log(typeof(this.avgCookie), typeof(this.minCust), this.maxCust);
+
   for (let i = 0; i < storeHours.length; i++) {
   const randomCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust)
   const cookieSales = (randomCust * Math.floor(this.avgCookie));
-  console.log(cookieSales);
   this.cookieNumber.push(cookieSales);
   }
 }
@@ -29,10 +28,17 @@ Store.prototype.getCookieSales = function() {
 const cookieChartElemDiv = document.getElementById('cookiechart');
 const tableElem = document.createElement('table');
 cookieChartElemDiv.appendChild(tableElem);
+tableElem.innerHMTL= ""
+const tableHeader = document.createElement('thead');
+tableElem.appendChild(tableHeader);
+const tableFoot = document.createElement('tfoot');
+tableElem.appendChild(tableFoot);
+
+
 
 function renderHeader() {
-  const tableHeader = document.createElement('thead');
-  tableElem.appendChild(tableHeader);
+  
+  document.getElementById(tableHeader);
   const storeCell = document.createElement('th');
   storeCell.textContent = ('Location');
   tableHeader.appendChild(storeCell);
@@ -69,8 +75,10 @@ Store.prototype.renderData = function() {
 function renderFooter() {
   let grandTotal = 0;
   
-  const tableFoot = document.createElement('tfoot');
-  tableElem.appendChild(tableFoot);
+  // const tableFoot = document.createElement('tfoot');
+  // tableElem.appendChild(tableFoot);
+  document.getElementById(tableFoot);
+  tableFoot.innerHTML = ""
   const footerStartCell = document.createElement('th');
   footerStartCell.textContent = ('Total');
   tableFoot.appendChild(footerStartCell);
@@ -80,7 +88,6 @@ function renderFooter() {
 
     for (let j = 0; j < Store.prototype.storeArray.length; j++) {
     hourlyTotal += Store.prototype.storeArray[j].cookieNumber[i];
-    console.log(hourlyTotal);
     } 
     const hourlyTotalCell = document.createElement('th');
     hourlyTotalCell.textContent = hourlyTotal;
@@ -125,7 +132,7 @@ function handleSubmit(event) {
   console.log(newStore);
   newStore.getCookieSales();
   newStore.renderData();
-  // renderFooter();
+  renderFooter();
   event.target.reset();
 }
 
@@ -134,3 +141,5 @@ salesFormElem.addEventListener('submit', handleSubmit);
 renderHeader();
 renderAllStores();
 renderFooter();
+
+
